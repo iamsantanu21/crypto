@@ -9,8 +9,8 @@ def generate_public_key(private_key, prime, generator):
 def compute_shared_secret(public_key, private_key, prime):
     return pow(public_key, private_key, prime)
 
-prime = 23  # A prime number
-generator = 5  # A primitive root modulo `prime`
+prime = 23  
+generator = 5  
 
 # Alice's keys
 alice_private_key = generate_private_key(prime)

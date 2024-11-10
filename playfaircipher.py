@@ -66,17 +66,25 @@ def decrypt(text, key):
     return result
 
 def main():
-    mode = input("Enter mode (encrypt/decrypt): ").strip().lower()
-    text = input("Enter text: ").strip().upper()
-    key = input("Enter key: ").strip().upper()
-    actions = {
-        'encrypt': lambda: print("Encrypted Text:", encrypt(text, key)),
-        'decrypt': lambda: print("Decrypted Text:", decrypt(text, key))
-    }
-    if mode in actions:
-        actions[mode]()
-    else:
-        print("Invalid mode selected. Choose 'encrypt' or 'decrypt'.")
+    while True:
+        print("\nMenu:")
+        print("1. Encrypt Text (3 characters)")
+        print("2. Decrypt Text (3 characters)")
+        print("3. Exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            text = input("Enter text: ").strip().upper()
+            key = input("Enter key: ").strip().upper()
+            print("Encrypted Text:", encrypt(text, key))
+        elif choice == 2:
+            text = input("Enter text: ").strip().upper()
+            key = input("Enter key: ").strip().upper()
+            print("Decrypted Text:", decrypt(text, key))
+        elif choice == 3:
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice, please try again!")
 
 if __name__ == "__main__":
     main()

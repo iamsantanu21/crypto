@@ -2,17 +2,15 @@ def encrypt(plaintext, shift):
     ciphertext = ""
 
     for ch in plaintext:
-        if ch.isalpha():  # Check if character is a letter
+        if ch.isalpha(): 
             base = ord('a') if ch.islower() else ord('A')
-            # Shift character within bounds of alphabet
             ch = chr((ord(ch) - base + shift) % 26 + base)
-        ciphertext += ch  # Append to ciphertext
+        ciphertext += ch  
 
     return ciphertext
 
 def decrypt(ciphertext, shift):
-    return encrypt(ciphertext, 26 - shift)  # Reverse shift for decryption
-
+    return encrypt(ciphertext, 26 - shift)  
 def main():
     while True:
         print("Choose an option:")

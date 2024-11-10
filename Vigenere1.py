@@ -11,7 +11,6 @@ def vigenere_encrypt(text, key):
 
     return ''.join(result)
 
-
 def vigenere_decrypt(cipher_text, key):
     cipher_text = cipher_text.replace(" ", "").upper()   # Remove spaces and convert to uppercase
     key = key.replace(" ", "").upper()

@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/santanu_mac/Documents/crypto",
+      "program": "/Users/santanu_mac/Documents/crypto/build/Debug/outDebug"
+    }
+  ]
+}

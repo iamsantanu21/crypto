@@ -1,14 +1,12 @@
 import random
 from sympy import mod_inverse, isprime
 
-# Generate a large prime number (for simplicity using smaller primes here)
 def generate_large_prime():
     while True:
         num = random.randint(100, 1000)
         if isprime(num):
             return num
 
-# RSA Key Generation
 def generate_keypair():
     # Step 1: Choose two prime numbers
     p = generate_large_prime()
@@ -32,21 +30,16 @@ def generate_keypair():
 
     return ((e, n), (d, n))
 
-# Encryption
 def encrypt(plaintext, public_key):
     e, n = public_key
-    # Convert each character to an integer and encrypt it
     encrypted_message = [pow(ord(char), e, n) for char in plaintext]
     return encrypted_message
 
-# Decryption
 def decrypt(ciphertext, private_key):
     d, n = private_key
-    # Decrypt each integer back to a character
     decrypted_message = ''.join([chr(pow(char, d, n)) for char in ciphertext])
     return decrypted_message
 
-# Example usage:
 public_key, private_key = generate_keypair()
 print("Public Key:", public_key)
 print("Private Key:", private_key)
